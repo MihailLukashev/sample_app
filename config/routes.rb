@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #get 'todos/index'
+
   resources :users do
     member do
       get :following, :followers
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :todos, only: [:create, :destroy, :update]
 
   root 'static_pages#home'
 
@@ -17,6 +20,9 @@ Rails.application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/todos', to: 'todos#index',            via: 'get'
+  match '/todos/update/all', to: 'todos#update_all',   via: 'put'
+  match '/destroy_completed', to: 'todos#destroy_completed',via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

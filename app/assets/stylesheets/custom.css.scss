@@ -184,12 +184,12 @@ aside {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
+  //margin-bottom: 15px;
   @include box_sizing;
 }
 
 input {
-  height: auto !important;
+  //height: auto !important;
 }
 .colbut {
   width: 200px;
@@ -263,3 +263,112 @@ aside {
   color: $gray-light;
   float: right;
 }
+
+/* todo settings */
+
+#texttodo{
+  textarea{
+    display: inline;
+    width: 350px;
+    resize: none;
+    margin-left: 27px;
+  }
+  .colbut3{
+    display: inline;
+    width: 50px;
+    height: 53px;
+    margin-top: -45px;
+  }
+  .todos{
+
+    margin-left: -40px;
+  }
+
+  ol li{
+list-style: none;
+    //width: 400px;
+    //border-radius: 5px;
+    //border: 1px solid black;
+    //margin: 3px;
+    //padding: 0.1em;
+    //font-size: 1em;
+    //height: 25px;
+    font-family: Verdana, Arial, Sans-Serif;
+  }
+  .butact{
+    margin-left: 50px;
+
+  }
+  .checkb{
+  display: inline;
+  margin: 0 3px 0 0;
+  width: 25px;
+  height: 25px;
+  top: 2px;
+
+
+  }
+  .checktext{
+    display: inline-block;
+    margin-left: -5px;
+    width: 350px;
+
+  }
+
+  span {
+    display: inline;
+  }
+  .inputtext{
+    display: none;
+    margin-left: -5px;
+    width: 350px;
+  }
+
+  .butdel{
+    display: inline;
+    //margin-left: -100px;
+    font-size: 25px;
+  }
+  .count{
+    display: inline;
+    float: left;
+  }
+
+}
+.butclear{
+  display: none;
+}
+.close{
+  font-size: 25px;
+  float: inherit;
+  color: red;
+}
+.input-lg{
+  border-radius: 5px;
+  border: 1px solid black;
+
+}
+
+.textchert{
+  text-decoration: line-through;
+  opacity: .7;
+}
+.toggle-all {
+  display: inline;
+  width: 25px;
+  border-radius: 10px;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 1px;
+}
+
+.formtext{
+  display: inline;
+}
+
+.form-control{
+  width: 350px;
+}
+
+
+

@@ -1,0 +1,10 @@
+<li>
+  <%= form_for(todo) do |f| %>
+
+    <%= f.check_box :check, class:"checkb" %>
+     <span class="checktext input-lg" ><%= todo.text%></span>
+      <%= f.text_field :text, class:"inputtext input-lg form-control" %>
+      <div class="butdel"><%= render 'shared/delete_link_text', object: todo %></div>
+  <% end %>
+
+</li>

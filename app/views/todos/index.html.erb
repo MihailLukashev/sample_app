@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= javascript_include_tag "todos"  %>
+</head>
+<body id="texttodo">
+<h1>ToDos</h1>
+
+<div class="formall">
+<%= form_tag('/todos/update/all', action: "update_all", method: "put") do %>
+    <%= submit_tag 'V', class: "toggle-all btn btn-xs btn-default" %>
+<% end %>
+</div>
+  <div class="formtext">
+<%= form_for(@todo) do |f| %>
+
+    <%= f.text_area :text, placeholder: "What to do?", class:"form-control"%>
+    <%= f.submit "Add", class: "btn btn-sm btn-primary colbut3" %>
+    </div>
+<% end %>
+<ol class="todos">
+  <%= render @todos %>
+</ol>
+<div class="count"></div>
+<ul class="nav navbar-nav butact">
+<li><button class="butall btn btn-info btn-sm">All</button></li>
+  <li><button class="butactive btn btn-info btn-sm">Active</button></li>
+  <li><button class="butcomlited btn btn-info btn-sm">Complited</button></li>
+ <li> <%= form_tag('/destroy_completed', action: "destroy_completed", method: "delete") do %>
+ <div class="butclear"><%= submit_tag 'Clear completed', class:"btn btn-link" %></div>
+  <% end %></li>
+</ul>
+
+</body>
+</html>
